@@ -1,0 +1,43 @@
+Dependencies for Project 'Blinky', Target 'ULink - Flash': (DO NOT MODIFY !)
+F (.\system_MKL25Z4.c)(0x559C08B5)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Freescale\Kinetis-D__UVISION_VERSION="515"-o .\flash\system_mkl25z4.o --omf_browse .\flash\system_mkl25z4.crf --depend .\flash\system_mkl25z4.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C2B638)
+I (C:\Keil_v5\ARM\Inc\Freescale\Kinetis\MKL25Z4.h)(0x559D3820)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0plus.h)(0x53469BE4)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x53469BE4)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x53469BE4)
+I (C:\Keil_v5\ARM\Inc\Freescale\Kinetis\system_MKL25Z4.h)(0x534699B4)
+F (.\startup_MKL25Z4.s)(0x53469AE2)(--cpu Cortex-M0+ --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Freescale\Kinetis--pd "__UVISION_VERSION SETA 515"--list .\flash\startup_mkl25z4.lst --xref -o .\flash\startup_mkl25z4.o --depend .\flash\startup_mkl25z4.d)
+F (.\Blinky.c)(0x55BA90FE)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Freescale\Kinetis-D__UVISION_VERSION="515"-o .\flash\blinky.o --omf_browse .\flash\blinky.crf --depend .\flash\blinky.d)
+I (C:\Keil_v5\ARM\Inc\Freescale\Kinetis\MKL25Z4.H)(0x559D3820)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0plus.h)(0x53469BE4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C2B638)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x53469BE4)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x53469BE4)
+I (C:\Keil_v5\ARM\Inc\Freescale\Kinetis\system_MKL25Z4.h)(0x534699B4)
+I (uart.h)(0x55B7A56C)
+I (gps.h)(0x55B3D564)
+I (vector.h)(0x55B7A65E)
+I (MKL25z_I2C.h)(0x5596E8A6)
+I (C:\Keil_v5\ARM\ARMCC\include\cmath)(0x54C2B638)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x54C2B638)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x54C2B638)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x54C2B638)
+F (.\uart.c)(0x559FCFBB)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Freescale\Kinetis-D__UVISION_VERSION="515"-o .\flash\uart.o --omf_browse .\flash\uart.crf --depend .\flash\uart.d)
+I (C:\Keil_v5\ARM\Inc\Freescale\Kinetis\MKL05Z4.H)(0x559D1F01)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0plus.h)(0x53469BE4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C2B638)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x53469BE4)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x53469BE4)
+I (C:\Keil_v5\ARM\Inc\Freescale\Kinetis\system_MKL05Z4.h)(0x534699B4)
+I (uart.h)(0x55B7A56C)
+F (.\MKL25z_I2C.c)(0x55B614EF)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Freescale\Kinetis-D__UVISION_VERSION="515"-o .\flash\mkl25z_i2c.o --omf_browse .\flash\mkl25z_i2c.crf --depend .\flash\mkl25z_i2c.d)
+I (C:\Keil_v5\ARM\Inc\Freescale\Kinetis\MKL25Z4.H)(0x559D3820)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0plus.h)(0x53469BE4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C2B638)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x53469BE4)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x53469BE4)
+I (C:\Keil_v5\ARM\Inc\Freescale\Kinetis\system_MKL25Z4.h)(0x534699B4)
+I (MKL25z_I2C.h)(0x5596E8A6)
+F (.\vector.c)(0x55B7A6D2)(-c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Freescale\Kinetis-D__UVISION_VERSION="515"-o .\flash\vector.o --omf_browse .\flash\vector.crf --depend .\flash\vector.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x54C2B638)
+I (vector.h)(0x55B7A65E)

@@ -1,0 +1,44 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.15
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Josie Hughes, Univeristy, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.15.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 2 (build 169)
+Assembler:       Armasm.exe V5.05 update 2 (build 169)
+Linker/Locator:  ArmLink.exe V5.05 update 2 (build 169)
+Library Manager: ArmAr.exe V5.05 update 2 (build 169)
+Hex Converter:   FromElf.exe V5.05 update 2 (build 169)
+CPU DLL:         SARMCM3.DLL V5.15.0
+Dialog DLL:      DARMCM1.DLL V1.12.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.15.0
+Dialog DLL:      TARMCM1.DLL V1.9.0.0
+ 
+<h2>Project:</h2>
+C:\Users\Josie\Documents\OnPersonDevice_Keil\I2C_Fall_arrays\Blinky.uvproj
+Project File Date:  07/28/2015
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.05 update 2 (build 169)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'ULink - Flash'
+compiling system_MKL25Z4.c...
+assembling startup_MKL25Z4.s...
+compiling Blinky.c...
+Blinky.c(125): warning:  #177-D: function "LED_Off" was declared but never referenced
+  __INLINE static void LED_Off (void) {
+Blinky.c: 1 warning, 0 errors
+compiling uart.c...
+compiling MKL25z_I2C.c...
+compiling vector.c...
+linking...
+Program Size: Code=10892 RO-data=564 RW-data=8 ZI-data=1240  
+".\Flash\Blinky.axf" - 0 Error(s), 1 Warning(s).
+</pre>
+</body>
+</html>
