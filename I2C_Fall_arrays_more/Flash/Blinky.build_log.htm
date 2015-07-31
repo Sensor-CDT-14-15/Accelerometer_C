@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Josie\Documents\Accelerometer_C\I2C_Fall_arrays_more\Blinky.uvproj
+Project File Date:  07/31/2015
+
+<h2>Output:</h2>
+Rebuild target 'ULink - Flash'
+compiling system_MKL25Z4.c...
+assembling startup_MKL25Z4.s...
+startup_MKL25Z4.s: Warning: A3910W: Old syntax, please use '--list='.
+compiling Blinky.c...
+Blinky.c(91): warning:  #177-D: variable "temp" was declared but never referenced
+                float temp;
+Blinky.c(188): warning:  #177-D: function "LED_Off" was declared but never referenced
+  __INLINE static void LED_Off (void) {
+Blinky.c: 2 warnings, 0 errors
+compiling uart.c...
+compiling MKL25z_I2C.c...
+compiling vector.c...
+linking...
+.\Flash\Blinky.axf: Warning: L6914W: option ro-base ignored when using --scatter.
+.\Flash\Blinky.axf: Warning: L6914W: option rw-base ignored when using --scatter.
+Finished: 0 information, 2 warning and 0 error messages.
+".\Flash\Blinky.axf" - 0 Error(s), 5 Warning(s).
