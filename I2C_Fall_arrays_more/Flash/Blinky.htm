@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Flash\Blinky.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Flash\Blinky.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050169: Last Updated: Fri Jul 31 16:05:24 2015
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050169: Last Updated: Fri Jul 31 16:41:43 2015
 <BR><P>
 <H3>Maximum Stack Usage =        344 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -431,7 +431,8 @@ Global Symbols
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arrayStddev
+<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;READ_adxl
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arrayStddev
 </UL>
 
 <P><STRONG><a name="[59]"></a>arrayStddev</STRONG> (Thumb, 140 bytes, Stack size 64 bytes, blinky.o(.text))
@@ -466,13 +467,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;READ_adxl
 </UL>
 
-<P><STRONG><a name="[62]"></a>READ_adxl</STRONG> (Thumb, 458 bytes, Stack size 80 bytes, blinky.o(.text))
+<P><STRONG><a name="[62]"></a>READ_adxl</STRONG> (Thumb, 776 bytes, Stack size 80 bytes, blinky.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 344<LI>Call Chain = READ_adxl &rArr; arrayStddev &rArr; pow &rArr; __kernel_poly &rArr; __aeabi_dmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pow
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;acos
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
@@ -485,6 +487,7 @@ Global Symbols
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lastHalf
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;firstHalf
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arrayStddev
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arrayAverage
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1048,7 +1051,8 @@ Global Symbols
 <P><STRONG><a name="[5a]"></a>__aeabi_fsub</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, faddsub.o(x$fpl$fsub))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_fsub
 </UL>
-<BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arrayStddev
+<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;READ_adxl
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arrayStddev
 </UL>
 
 <P><STRONG><a name="[a3]"></a>_fsub</STRONG> (Thumb, 204 bytes, Stack size 16 bytes, faddsub.o(x$fpl$fsub), UNUSED)
@@ -1058,7 +1062,7 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[6a]"></a>NVIC_SetPriority</STRONG> (Thumb, 110 bytes, Stack size 8 bytes, blinky.o(.text))
+<P><STRONG><a name="[6a]"></a>NVIC_SetPriority</STRONG> (Thumb, 204 bytes, Stack size 8 bytes, blinky.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = NVIC_SetPriority
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main

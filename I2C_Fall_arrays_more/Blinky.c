@@ -24,6 +24,8 @@ float arrayAverage(float array[], int length);
 float arraystddev(float array[], int lenght);
 float * firstHalf(float array[], int length);
 float * lastHalf(float array[], int length);
+int fall_detected(float sigma_stddev_ratio, float theta_z_average_ratio, float theta_z_average_delta, float sigma_sttdev_first, float xyz_variances_norm);
+
 
 volatile uint32_t msTicks;                            /* counts 1ms timeTicks */
 
@@ -80,6 +82,22 @@ float * firstHalf(float array[], int length) {
     return buf;
 }
 
+int fall_detected(float sigma_stddev_ratio, float theta_z_average_ratio, float theta_z_average_delta, float sigma_sttdev_first, float xyz_variances_norm){
+						int fall = 0;
+						if (
+										(sigma_stddev_ratio > threshold_sig || theta_z_average_ratio > threshold_theta_z)
+										&&
+										(theta_z_average_ratio > threshold_theta_z || theta_z_average_delta > threshold_delta_theta_z)
+										&&
+										(sigma_stddev_first > threshold_sigma_stddev_first || xyz_variances_norm > threshold_xyz_variances_norm)
+					) {
+										//printf("FALL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+										fall = 1;
+						}
+						return fall;
+		}
+
+
 float * lastHalf(float array[], int length) {
     int i;
     float *buf = malloc(sizeof(float)*length/2);
@@ -133,7 +151,8 @@ for (i=ARRAY_LENGTH; i>0; i--){
 			theta_z[i] = theta_z[i-1];
     }
 
-
+		x_values[0] = fabsf(x);
+		y_values[0] = fabsf(y);
 		z_values[0] = fabsf(z);
     sigma[0] = root;
 
@@ -142,14 +161,9 @@ for (i=ARRAY_LENGTH; i>0; i--){
 
 		//x_values[0] = fabsf(x);
 		//y_values[0] = fabsf(y);
+		
+		
 
-		while(1){
-		sigma_stddev_ratio = (arrayStddev(firstHalf(sigma, 10), 10) / arrayStddev(lastHalf(sigma, 10),10)); 
-		theta_z_average_ratio = (arrayAverage(firstHalf(theta_z, 10), 10) / arrayAverage(lastHalf(theta_z, 10), 10));
-		theta_z_average_delta = (arrayAverage(firstHalf(theta_z, 10), 10) - arrayAverage(lastHalf(theta_z, 10), 10));
-		sigma_stddev_first = arrayStddev(firstHalf(sigma, 10), 10);
-		xyz_variances_norm = sqrt(pow(arrayStddev(firstHalf(x_data, 10), 10)
-}
 
 }
 
@@ -238,6 +252,13 @@ int main (void) {
     LED_On ();
 		Delay(500);
 	//	uart0_putchar('B');
+		
+		sigma_stddev_ratio = (arrayStddev(firstHalf(sigma, 10), 10) / arrayStddev(lastHalf(sigma, 10),10)); 
+		theta_z_average_ratio = (arrayAverage(firstHalf(theta_z, 10), 10) / arrayAverage(lastHalf(theta_z, 10), 10));
+		theta_z_average_delta = (arrayAverage(firstHalf(theta_z, 10), 10) - arrayAverage(lastHalf(theta_z, 10), 10));
+		sigma_stddev_first = arrayStddev(firstHalf(x_values, 10), 10);
+		xyz_variances_norm = sqrt(pow(arrayStddev(firstHalf(x_values, 10), 10),2)+pow(arrayStddev(firstHalf(y_values, 10), 10),2)+pow(arrayStddev(firstHalf(z_values, 10), 10),2));
+		fall_detected(sigma_stddev_ratio, theta_z_average_ratio, theta_z_average_delta, sigma_stddev_first, xyz_variances_norm);
 
   }
 }
