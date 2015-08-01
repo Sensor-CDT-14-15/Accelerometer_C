@@ -3,8 +3,8 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\Josie\Documents\OnPersonDevice_Keil\I2C_Fall_arrays\Blinky.uvproj
-Project File Date:  07/28/2015
+C:\Users\Josie\Documents\Accelerometer_C\FallDetection\Blinky.uvproj
+Project File Date:  08/01/2015
 
 <h2>Output:</h2>
 Rebuild target 'ULink - Flash'
@@ -12,11 +12,17 @@ compiling system_MKL25Z4.c...
 assembling startup_MKL25Z4.s...
 startup_MKL25Z4.s: Warning: A3910W: Old syntax, please use '--list='.
 compiling Blinky.c...
-Blinky.c(232): warning:  #550-D: variable "fallDetect" was set but never used
-        int fallDetect;
-Blinky.c(221): warning:  #177-D: function "LED_Off" was declared but never referenced
+Blinky.c(177): warning:  #223-D: function "sprintf" declared implicitly
+                length = sprintf (buffer, "Fall");
+Blinky.c(184): warning:  #223-D: function "sprintf" declared implicitly
+                                        length = sprintf (buffer, "No \n");
+Blinky.c(251): warning:  #550-D: variable "fallDetect" was set but never used
+        int fallDetect; 
+Blinky.c(252): warning:  #177-D: variable "buffer" was declared but never referenced
+        char buffer[200];
+Blinky.c(240): warning:  #177-D: function "LED_Off" was declared but never referenced
   __INLINE static void LED_Off (void) {
-Blinky.c: 2 warnings, 0 errors
+Blinky.c: 5 warnings, 0 errors
 compiling uart.c...
 compiling MKL25z_I2C.c...
 compiling vector.c...
@@ -24,11 +30,11 @@ linking...
 .\Flash\Blinky.axf: Warning: L6914W: option ro-base ignored when using --scatter.
 .\Flash\Blinky.axf: Warning: L6914W: option rw-base ignored when using --scatter.
 Finished: 0 information, 2 warning and 0 error messages.
-".\Flash\Blinky.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\Josie\\Documents\\OnPersonDevice_Keil\\I2C_Fall_arrays\\Flash\\Blinky.axf" 
+".\Flash\Blinky.axf" - 0 Error(s), 8 Warning(s).
+Load "C:\\Users\\Josie\\Documents\\Accelerometer_C\\FallDetection\\Flash\\Blinky.axf" 
 *** Restricted Version with 32768 Byte Code Size Limit
-*** Currently used: 12464 Bytes (38%)
-Set JLink Project File to "C:\Users\Josie\Documents\OnPersonDevice_Keil\I2C_Fall_arrays\JLinkSettings.ini"
+*** Currently used: 12672 Bytes (38%)
+Set JLink Project File to "C:\Users\Josie\Documents\Accelerometer_C\FallDetection\JLinkSettings.ini"
 * JLink Info: Device "MKL25Z64XXX4" selected.
  
 JLink info:
@@ -58,66 +64,13 @@ ROMTableAddr = 0xF0002003
 Target info:
 ------------
 Device: MKL25Z64xxx4
-VTarget = 3.300V
+VTarget = 3.285V
 State of Pins: 
 TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 0
 Hardware-Breakpoints: 2
 Software-Breakpoints: 8192
 Watchpoints:          2
 JTAG speed: 1000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Load "C:\\Users\\Josie\\Documents\\OnPersonDevice_Keil\\I2C_Fall_arrays\\Flash\\Blinky.axf" 
-*** Restricted Version with 32768 Byte Code Size Limit
-*** Currently used: 12464 Bytes (38%)
-Set JLink Project File to "C:\Users\Josie\Documents\OnPersonDevice_Keil\I2C_Fall_arrays\JLinkSettings.ini"
-* JLink Info: Device "MKL25Z64XXX4" selected.
- 
-JLink info:
-------------
-DLL: V4.98e, compiled May  5 2015 11:00:52
-Firmware: J-Link V9 compiled May 22 2015 17:20:50
-Hardware: V9.30
-S/N : 269301230 
-OEM : SEGGER-EDU 
-Feature(s) : FlashBP, GDB 
- 
-* JLink Info: Found SWD-DP with ID 0x0BC11477
-* JLink Info: Found SWD-DP with ID 0x0BC11477
-* JLink Info: Found Cortex-M0 r0p0, Little endian.
-* JLink Info: FPUnit: 2 code (BP) slots and 0 literal slots
-* JLink Info: CoreSight components:
-* JLink Info: ROMTbl 0 @ F0002000
-* JLink Info: ROMTbl 0 [0]: FFFFE000, CID: B105900D, PID: 000BB932 MTB-M0+
-* JLink Info: ROMTbl 0 [1]: FFFFF000, CID: B105900D, PID: 0008E000 MTBDWT
-* JLink Info: ROMTbl 0 [2]: F00FD000, CID: B105100D, PID: 000BB4C0 ROM Table
-* JLink Info: ROMTbl 1 @ E00FF000
-* JLink Info: ROMTbl 1 [0]: FFF0F000, CID: B105E00D, PID: 000BB008 SCS
-* JLink Info: ROMTbl 1 [1]: FFF02000, CID: B105E00D, PID: 000BB00A DWT
-* JLink Info: ROMTbl 1 [2]: FFF03000, CID: B105E00D, PID: 000BB00B FPB
-ROMTableAddr = 0xF0002003
- 
-Target info:
-------------
-Device: MKL25Z64xxx4
-VTarget = 3.300V
-State of Pins: 
-TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 0
-Hardware-Breakpoints: 2
-Software-Breakpoints: 8192
-Watchpoints:          2
-JTAG speed: 1000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-</pre>
-</body>
-</html>
  
 Erase Done.
 Programming Done.

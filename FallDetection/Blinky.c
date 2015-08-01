@@ -9,7 +9,7 @@
 #include <string.h>
 
 #define LED_NUM     3                   /* Number of user LEDs                */
-#define ARRAY_LENGTH 10
+#define ARRAY_LENGTH 20
 
 #define BMP180_ADDRESS          0x77<<1 // I2C address of BMP180, eight bit address on mbed
 #define BMP180_WHO_AM_I         0xD0    // WHO_AM_I id of BMP180, should return 0x55
@@ -152,6 +152,9 @@ void READ_adxl(void) {
 
 int falldetected(void){
 		int fall = 0;
+		char buffer[200];
+		int length;
+		int i;
 	
 		float sigma_stddev_ratio, theta_z_average_ratio, theta_z_average_delta, sigma_stddev_first, xyz_variances_norm;
 		
@@ -170,7 +173,23 @@ int falldetected(void){
 		) {
 		//FALL DETECTED
 		fall = 1;
+			
+		length = sprintf (buffer, "Fall");
+		for(i=0;i<length;i++)
+		{
+			uart0_putchar(buffer[i]);
+		}
 	}
+		else {
+					length = sprintf (buffer, "No \n");
+		for(i=0;i<length;i++)
+		{
+			uart0_putchar(buffer[i]);
+		}
+			
+		}
+			
+			
 	return fall;	
 }
 
@@ -229,7 +248,8 @@ __INLINE static void LED_Off (void) {
  *----------------------------------------------------------------------------*/
 
 int main (void) {
-	int fallDetect;
+	int fallDetect;	
+	char buffer[200];
 
   SystemCoreClockUpdate();                      /* Get Core Clock Frequency */
   SysTick_Config(SystemCoreClock/1000);         /* Generate interrupt each 1 ms    */
@@ -256,9 +276,8 @@ int main (void) {
   while(1) {
 		READ_adxl();
 		fallDetect = falldetected();
-
     LED_On ();
-		Delay(50);
+		Delay(30);
   }
 }
 
