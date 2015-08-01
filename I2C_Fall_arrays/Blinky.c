@@ -88,6 +88,7 @@ void READ_adxl(void) {
 		float x, y, z, root;
 		int i = 0;
 		float temp;
+		float zz;
 
 		//I2C ACCELEROMETER ADRESS 0x1D
 		const int adxl_read = (0x1D << 1) & 0xFE;
@@ -111,8 +112,10 @@ void READ_adxl(void) {
 		//Convert to x,y,z reading using msb and lsb, assume last two digits noise
 		x = ((int)(read_buff_x[0] << 6) | (int)(read_buff_x[1] >> 2)) / 4096.0;
 		y = ((int)(read_buff_x[2] << 6) | (int)(read_buff_x[3] >> 2)) / 4096.0;
-		z = ((int)(read_buff_x[4] << 6) | (int)(read_buff_x[5] >> 2)) / 4096.0;
+		z = ((int)(read_buff_x[2] << 6) | (int)(read_buff_x[3] >> 2)) / 4096.0;
 
+		
+		
 		I2C_powerDown();
 
     root = sqrt(pow(x,2) + pow(y,2) + pow(z,2));

@@ -1,0 +1,12 @@
+
+".\flash\system_mkl25z4.o"
+".\flash\startup_mkl25z4.o"
+".\flash\blinky.o"
+".\flash\uart.o"
+".\flash\mkl25z_i2c.o"
+".\flash\vector.o"
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x1FFFF000 --strict --scatter ".\Flash\Blinky.sct"
+
+--entry Reset_Handler --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Flash\Blinky.map" -o .\Flash\Blinky.axf

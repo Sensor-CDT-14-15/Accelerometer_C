@@ -4,7 +4,7 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\Josie\Documents\Accelerometer_C\I2C_Fall_arrays\Blinky.uvproj
-Project File Date:  07/28/2015
+Project File Date:  07/31/2015
 
 <h2>Output:</h2>
 Rebuild target 'ULink - Flash'
@@ -14,9 +14,11 @@ startup_MKL25Z4.s: Warning: A3910W: Old syntax, please use '--list='.
 compiling Blinky.c...
 Blinky.c(90): warning:  #177-D: variable "temp" was declared but never referenced
                 float temp;
-Blinky.c(187): warning:  #177-D: function "LED_Off" was declared but never referenced
+Blinky.c(91): warning:  #550-D: variable "zz" was set but never used
+                float zz;
+Blinky.c(190): warning:  #177-D: function "LED_Off" was declared but never referenced
   __INLINE static void LED_Off (void) {
-Blinky.c: 2 warnings, 0 errors
+Blinky.c: 3 warnings, 0 errors
 compiling uart.c...
 compiling MKL25z_I2C.c...
 compiling vector.c...
@@ -24,7 +26,7 @@ linking...
 .\Flash\Blinky.axf: Warning: L6914W: option ro-base ignored when using --scatter.
 .\Flash\Blinky.axf: Warning: L6914W: option rw-base ignored when using --scatter.
 Finished: 0 information, 2 warning and 0 error messages.
-".\Flash\Blinky.axf" - 0 Error(s), 5 Warning(s).
+".\Flash\Blinky.axf" - 0 Error(s), 6 Warning(s).
 Load "C:\\Users\\Josie\\Documents\\Accelerometer_C\\I2C_Fall_arrays\\Flash\\Blinky.axf" 
 *** Restricted Version with 32768 Byte Code Size Limit
 *** Currently used: 11672 Bytes (35%)
